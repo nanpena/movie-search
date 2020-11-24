@@ -1,6 +1,5 @@
 import React from 'react'
 import SearchBox from './components/SearchBox'
-import SearchButton from './components/SearchButton'
 
 function App() {
   return (
@@ -9,7 +8,7 @@ function App() {
       
       <div>
        <SearchBox/>
-       <SearchButton/>
+ 
       </div>
 
     </div>
