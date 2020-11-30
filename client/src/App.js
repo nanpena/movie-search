@@ -9,12 +9,33 @@ class App extends Component {
     return (
  
       <div className="App">
-        <h1> Movie Search </h1>
-        
+        {/* add respondsive banner to app  */}
+        <div className='hero-banner'>
+          <div className='hero-container'>
+            {/* <h1 className='title'> Movie Search </h1> */}
+            {/* <SearchBar/> */}
+          </div>
+          
+        </div>
+
         <div>
          <SearchBar/>
    
         </div>
+
+
+  
+
+
+
+
+
+        {/* <h1 className='title'> Movie Search </h1>
+        
+        <div>
+         <SearchBar/>
+   
+        </div> */}
   
       </div>
   

@@ -43,28 +43,8 @@ app.use(bodyParser.json());
 
     //--------------------------------------------------//
 
-    app.get('/api/movies', (req,res) => {
-        let movies = ['movie1','movie2','movie3']
-        res.json(movies)
-      })
-    
-      app.get('/api/allmovies',  async (req,res) => {
-        // const movies =  Movie.findAll()
-        console.log('###### requestion API #######',"movies")
-        
-        try {
-            const movies = await Movie.findAll().then((result) => res.json(result))
-            console.log('###### requestion API #######',"movies", movies)
-            // res.json(movies) 
-              
-           } catch (err) {
-             console.error(err)
-           }
-      })
-    
-    
-    
-    
+   
+
     app.post("/api/movies", async (req, res) => {
     console.log('#### POSTING NEW MOVIE ###',req.body)
 
