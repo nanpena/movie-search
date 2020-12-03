@@ -2,22 +2,17 @@ import React from 'react'
 import Axios from 'axios'
 
 export default function Popup ({selected}) {
-    console.log('popup function', selected)
 
     const voteThumbsUp = async (movie) => {
         const title = movie.Title
-    
-        console.log('I like this movie', title)
         const {data} = await Axios.post('./api/movies',{title : title, thumbsUp : true})
-        console.log('dataaaaaa', data)
 
     }
 
     const voteThumbsDown = async (movie) => {
-        console.log('This movie sucks', movie.Title)
+
         const title = movie.Title
         const {data} = await Axios.post('./api/movies',{title : title, ThumbsDown: true})
-        console.log('dataaaaaa', data)
 
     }
 
@@ -25,14 +20,22 @@ export default function Popup ({selected}) {
    
     return (
         <section>
-            <div> 
-            <p>{selected.Plot}</p>
-            <h4>Director : {selected.Director}</h4>
-            <h3>{selected.vote_average}</h3>
-           
-            <button movie={selected} onClick={()=> voteThumbsUp(selected)}> Thumbs Up</button>
-            <button movie={selected} onClick={()=> voteThumbsDown(selected)}> Thumbs Down</button>
+
+            <div className='content-bar'>
+                <div>
+                    <p>{selected.Plot}</p>
+                    <p className='bold-letter'>Director : <span>{selected.Director}</span></p>
+                    <p className='bold-letter'>Production : <span> {selected.Production}</span></p>
+                    <p className='bold-letter'>Date Release : <span>{selected.Released} </span></p>
+                    <p className='bold-letter'>  <span className='star'>
+                        <i class="fas fa-star"></i> </span>
+                        Score : 
+                        {(selected.Metascore !== 'N/A') ? <span> {selected.Metascore}/100   </span> : <span> N/A   </span>}  
+                        <button className='thumbs-up'movie={selected} onClick={()=> voteThumbsUp(selected)}> <i class="fas fa-thumbs-up"></i> Like </button>
+                        <button className='thumbs-down' movie={selected} onClick={()=> voteThumbsDown(selected)}> <i class="fas fa-thumbs-down">  Unlike</i></button>              
+                    </p>
+                </div>
+            
             </div>
         </section>
-    )
-}
+    )}

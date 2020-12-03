@@ -1,0 +1,231 @@
+
+html {
+  font-size : 10px;
+
+}
+
+*{
+  box-sizing: border-box;
+} 
+
+body {
+  margin-top: 0;
+  margin-bottom: 5rem;
+  margin : 0;
+  padding : 0;
+  background-color: #1d2025;
+  color : #333; 
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+
+.hero-banner { 
+  margin : 0;
+  padding : 0;
+  position : relative;
+  height: 50rem;
+  overflow: hidden;
+  background: url(banner.jpg) no-repeat center;
+  background-size: cover;
+
+}
+
+.banner-title{
+  height: 50em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content:center;
+}
+.banner-title label{
+ margin : 0;
+ font-size : 1.8rem;
+ font-family: Copperplate, 'Arial Narrow Bold', sans-serif;
+ color : white;
+}
+.arrow{
+margin-top : 3rem;
+width: 8rem;
+height: 8rem;
+}
+
+p {
+  font-size : 1.6rem;
+}
+
+small { 
+  font-size : 1.2rem
+}
+
+.App{
+  margin : 0 auto;
+  max-width: 1000px;
+  
+}
+
+.title{
+  font-size: 4.4rem;
+  text-align: center;
+}
+
+.form {
+  display : grid;
+  margin-top : 4rem;
+}
+
+.label { 
+  font-size : 1.2rem;
+  margin-bottom : 0.2rem;
+}
+
+.input { 
+  font-size : 1.6rem;
+  padding : 0.5rem 2rem;
+  line-height: 2.8rem;
+  border-radius : 20px;
+  border : 1px solid #ddd;
+  margin-bottom : 1rem;
+  border-top-style : hidden;
+  outline: none;
+}
+
+
+
+.button{
+  background-color:#f5cea7;
+  color : darkslategrey;
+  padding : 1rem 2rem;
+  border : 1px solid #f5cea7;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  cursor : pointer;
+  transition : background-color 250ms
+
+}
+
+.button:hover{
+  background-color: lightseagreen;
+  border : 1px solid lightseagreen;
+}
+
+@media (min-width : 786px) {
+  .form { 
+    grid-template-columns : auto 1fr auto; 
+    grid-gap : 1rem;
+    align-items : center;
+  }
+
+  .input {
+    margin-bottom : 0;
+  }
+
+  .banner-title label{
+    margin : 0;
+    font-size : 3.5rem;
+   }
+
+   .arrow{
+    width: 10rem;
+    height: 10rem;
+    }
+
+    
+
+    
+}
+
+.movie-list {
+  margin-top : 4rem;
+}
+
+.movie-card { 
+  padding : 2rem 4rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px gray;
+  margin-bottom: 2rem;
+  background-color: #ebffeb;
+}
+
+
+.movie-title{
+  font-size: 3rem;
+  text-align: center;
+  color : #0e343b;
+}
+
+.movie-img{
+  margin : 0 auto;
+  display: block;
+  border-radius: 10px;
+  width: 300px;
+  height: 420px;
+}
+
+.nav-bar{
+  background-color: #0e343b;
+  border : 1px solid  #0e343b;
+  height: 7rem;
+  display : flex;
+  
+}
+
+.logo{
+  width: 25rem;
+  height: auto;
+  margin : 0 auto;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content:center;
+
+}
+
+
+
+.content-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.thumbs-up{
+  border-radius: 20px;
+  background-color: lightgreen;
+  
+ 
+}
+
+.thumbs-down{
+  border-radius: 20px;
+  background-color: lightsalmon;
+
+}
+
+.question{
+  font-size: 1.5rem;
+}
+
+.star{
+  color : goldenrod;
+}
+
+
+.bold-letter{
+  font-weight: bold;
+}
+
+span{
+  font-weight: normal;
+}
+
+
+.sorry{
+  color : white;
+  text-align: center;
+}
+
+.error-icon{
+  color : red;
+}

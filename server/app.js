@@ -1,9 +1,3 @@
-// [***] when clicked on thumbs up/down button...
-//      - I want to go to database name 'Movies' to check it 
-//      - this movie title already exists, if yes ----> go to that table and +1 or -1 on the vote 
-//                                         if No, create new table and add the vote. 
-
-
 const express = require ('express')
 const app = express()
 const port = 5000;
@@ -35,7 +29,7 @@ app.use(bodyParser.json());
     });
   
   
-    sequelize.sync({force : false}).then(()=> {
+    sequelize.sync({force : false }).then(()=> {
       console.log(`database & tables created`)
     })
   
@@ -46,7 +40,7 @@ app.use(bodyParser.json());
    
 
     app.post("/api/movies", async (req, res) => {
-    console.log('#### POSTING NEW MOVIE ###',req.body)
+   
 
     const findMovie = await Movie.findAll({
         where : {
@@ -54,21 +48,20 @@ app.use(bodyParser.json());
         }
     })
 
-    if (req.body.thumbsUp === true) {
+    if (req.body.thumbsUp) {
 
-        if(findMovie.length !== 0){
-            console.log('++ UPP ++ movie already exits')            
-                await Movie.findOne({ where: 
-                    {title: req.body.title} }).then(function (movie) {
-               movie.update({
-                   thumbsUp : movie.thumbsUp + 1
-               }).then((movie) => {
+        if(findMovie.length !== 0){         
+               await Movie.findOne({ where: 
+                    {title: req.body.title} })
+                .then(function (movie) {
+                   movie.update({thumbsUp : movie.thumbsUp + 1})
+                   .then((movie) => {
                    res.json(movie)
-               })
-            })
+                })
+        })
     
         } else {
-            console.log('++ UPPP ++ new movie need to be added ')
+
             Movie.create({
                 title: req.body.title,
                 thumbsUp: 1,
@@ -79,20 +72,18 @@ app.use(bodyParser.json());
 
     } else {
 
-        console.log('Voting Thumbs Down')
-        if(findMovie.length !== 0){
-            console.log('%%% DOWN %% movie already exits')            
-                await Movie.findOne({ where: 
-                    {title: req.body.title} }).then(function (movie) {
-               movie.update({
-                   thumbsDown : movie.thumbsDown + 1
-               }).then((movie) => {
+
+        if(findMovie.length !== 0){        
+               await Movie.findOne({ where: 
+                    {title: req.body.title} })
+               .then(function (movie) {
+                    movie.update({thumbsDown : movie.thumbsDown + 1})
+                    .then((movie) => {
                    res.json(movie)
                })
-            })
+        })
     
         } else {
-            console.log('%% DOWN %% new movie need to be added ')
             Movie.create({
                 title: req.body.title,
                 thumbsUp: 0,
@@ -101,11 +92,7 @@ app.use(bodyParser.json());
               .then( (result) => res.json(result) )
         }   
     }
-
-
-
-    
-    })
+})
 
 
 
