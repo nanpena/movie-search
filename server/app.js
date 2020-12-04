@@ -29,7 +29,7 @@ app.use(bodyParser.json());
     });
   
   
-    sequelize.sync({force : false }).then(()=> {
+    sequelize.sync({force : true}).then(()=> {
       console.log(`database & tables created`)
     })
   
