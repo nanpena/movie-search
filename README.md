@@ -6,7 +6,7 @@ MovieSearch is a responsive single-page application that allows users to search 
 
 
 ## Setup : 
-1. In your server, create a  ```'movie-search' ``` database.
+1. In your local server, create a  ```'movie-search' ``` database.
 ``` 
 CREATE DATABASE movie-search;
 ```
