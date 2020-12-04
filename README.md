@@ -4,19 +4,23 @@ MovieSearch is a responsive single-page web application that allows users to sea
 
 
 ## Set Up : 
-1 ) In your server, create a 'movie-search' database    
-    ``` CREATE DATABASE movie-search;```
+1 ) In your server, create a  ```'movie-search' ``` database    
+    ``` 
+    CREATE DATABASE movie-search;
+    ```
 
 2) Download a package and its dependencies.
-     ```npm install  ```
+     ```
+     npm install 
+     ```
 
-3) Start the backend server in the 'server' repository. 
+3) Start the backend server in the  ```'server' ``` repository. 
  ```
  cd server  
  node app.js  
  ```
 
-4) Start the application in the 'client' repository.
+4) Start the application in the  ```'client' ``` repository.
  ```
 cd client 
 npm start 
